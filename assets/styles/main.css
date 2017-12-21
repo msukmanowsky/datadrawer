@@ -1,0 +1,63 @@
+/* html {
+  font-family: 'Arial';
+  font-size: 16px;
+} */
+.container-fluid {
+  margin-top: 1.5rem;
+}
+#settings header {
+  margin-bottom: 2rem;
+}
+#settings h1 {
+  font-size: 1.777rem;
+  margin
+}
+#settings h2 {
+  font-size: 1.333rem;
+}
+
+#credit {
+  margin-top: 3rem;
+  color: #ccc;
+  line-height: 1.1;
+}
+
+
+#controls > form > button {
+  margin-bottom: .5rem;
+}
+#controls > form > button:first-child {
+  margin-left: 1rem;
+}
+
+#format_controls label:first-child {
+  margin-right: 1rem;
+}
+/**
+ * Charting stuff
+ */
+.bar {
+  fill: steelblue;
+  stroke: none;
+}
+.bar-invisible {
+  fill: #fff;
+  opacity: 0;
+}
+/* .bar-invisible:hover {
+  cursor: ns-resize;
+} */
+
+#chart > svg {
+  border: 1px solid #ccc;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis.axis-top line {
+  stroke: #ccc;
+}

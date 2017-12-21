@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Drawer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2433797-12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2433797-12');
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-2" id="settings">
+                <header>
+                    <h1>Data Drawer</h1>
+                    <small>Drag your mouse over the bars</small>
+                </header>
+
+                <h2>Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="num_points">Data Points</label>
+                        <input id="num_points" type="number" class="form-control" min="5" max="100" aria-describedby="num_points_help" value="24" />
+                        <small id="num_points_help" class="form-text text-muted">Between 5 and 100</small>
+                    </div>
+                    <div class="form-row" style="display: none">
+                        <div class="form-group col-6">
+                            <label for="y_min">Y min</label>
+                            <input id="y_min" type="number" class="form-control" value="0" />
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="y_max">Y max</label>
+                            <input id="y_max" type="number" class="form-control" value="1" />
+                        </div>
+                        <div class="invalid-feedback">
+                            Minimum must be &lt; maximum
+                        </div>
+                    </div>
+                </form>
+
+                <p id="credit">
+                    <small>
+                        Made by <a href="https://twitter.com/msukmanowsky" target="_blank">&#64;msukmanowsky</a>.
+                        Comments and pull requests welcome.
+                    </small>
+                </p>
+
+                <a class="github-button" href="https://github.com/msukmanowsky/datadrawer" data-icon="octicon-star" data-show-count="true" aria-label="Star msukmanowsky/datadrawer on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/msukmanowsky/datadrawer/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork msukmanowsky/datadrawer on GitHub">Fork</a>
+            </aside>
+            <main class="col-10">
+                <div class="row">
+                    <div class="col" id="chart"></div>
+                </div>
+                <div class="row">
+                    <div class="col" id="controls">
+                        <form>
+                            <div id="format_controls" class="btn-group" data-toggle="buttons" role="group" aria-label="Download Format">
+                                <label class="text-muted btn" disabled="true">Format</label>
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="format" id="format_json" autocomplete="off" checked> JSON
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="format" id="format_csv" autocomplete="off"> CSV
+                                </label>
+                            </div>
+                            <button id="copy_button" type="button" class="btn btn-outline-primary" title="Copied!">Copy</button>
+                            <button id="export_button" type="button" class="btn btn-outline-primary">Export</button>
+                            <button id="reset_button" type="button" class="btn btn-link">Reset</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table id="data_table" class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="10%">X</th>
+                                    <th>Y</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script src="assets/scripts/app.js"></script>
+</body>
+</html>
